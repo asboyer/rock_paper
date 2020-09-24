@@ -94,8 +94,10 @@ while True:
             print(scorecard)
             continue
         elif play.lower() == 'clear':
-            os.system('cls')
-            continue
+            if sys.platform.startswith('win32'):
+                os.system('cls')
+            else:
+                os.system('clear')
         else:
             print("Please enter 'yes' or 'no'.") 
             continue
