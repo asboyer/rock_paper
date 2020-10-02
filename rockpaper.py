@@ -7,7 +7,7 @@ def delay_print(s):
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(0.004)
+        time.sleep(0.04)
 
 delay_print("What is your name: ")
 name = input()
@@ -22,6 +22,7 @@ rule = 0
 no = 0
 none = 0
 t = 0
+yessir = 0
 rules = '''
 Welcome to rockpaper.py, a simple game of rock paper scissors.
 
@@ -52,7 +53,6 @@ while True:
             break
         elif choice.lower() == 'no' or choice.lower() == 'n':
             delay_print("Too bad. Have a nice day, " + name + ".")
-            print("\n")
             none = 1
             break
         elif choice.lower() == 'rules':
@@ -94,7 +94,8 @@ while True:
         if player.lower() == 'rock' or player.lower() == 'paper' or player.lower() == 'scissors' or player.lower() == 'r' or player.lower() == 'p' or player.lower() == 's' or player.lower() == 'scissor': 
             break
         else:
-            print("!Please enter a valid input!")
+            print('\n')
+            print("!please enter a valid input!")
             continue
 
     if player.lower() == 'r':
@@ -144,31 +145,70 @@ while True:
     
     print(scorecard)
     
-    while True:
-        delay_print("Would you like to play again? ")
-        play = input()
+    if yessir == 0:
     
-        if play.lower() == 'yes' or play.lower() == 'no':
-            break
-        elif play.lower() == 'score':
-            print(scorecard)
-            continue
-        elif play.lower() == 'clear':
-            if sys.platform.startswith('win32'):
-                os.system('cls')
+        while True:
+            delay_print("Would you like to play again? ")
+            play = input()
+        
+            if play.lower() == 'yes' or play.lower() == 'no' or play.lower() == 'n' or play.lower() == 'y':
+                break
+            elif play.lower() == 'score':
+                print(scorecard)
+                continue
+            elif play.lower() == 'clear':
+                if sys.platform.startswith('win32'):
+                    os.system('cls')
+                else:
+                    os.system('clear')
+            elif play.lower() == 'credit':
+                delay_print("\n\n'Written with love'\n\n\n- ballerboyer\n\n")
+                continue
             else:
-                os.system('clear')
-        elif play.lower() == 'credit':
-            delay_print("\n\n'Written with love'\n\n\n- ballerboyer\n\n")
+                print("Please enter 'yes' or 'no'.") 
+                continue
+      
+        if play.lower() == 'yes' or player.lower() == 'y':
             continue
         else:
-            print("Please enter 'yes' or 'no'.") 
-            continue
-  
-    if play.lower() == 'yes':
-        continue
-  
+            if computer_score > player_score:
+                delay_print("It looks like I got the best of you today, " + name + ".")
+                break
+            elif computer_score < player_score:
+                delay_print("Congrats! I am a tough one to beat, " + name + "." )
+                break
+            else:
+                if player_score == 1:
+                    delay_print("C'mon, " + name + "! We both have " + str(player_score) + " point.")
+                    print("\n")
+                else:
+                    delay_print("C'mon, " + name + "! We both have " + str(player_score) + " points.")
+                    print("\n")
+                delay_print("Just one more game? ")
+                while True:
+                    please = input()
+                    if please.lower() == 'yes' or please.lower() == 'y' or please.lower() == 'no' or please.lower() == "n":
+                        break
+                    
+                    else:
+                        delay_print("Gimme a straight answer, " + name + ": ")
+                        continue
+                if please.lower() == 'y' or please.lower() == 'yes':
+                    delay_print("Next point wins.....")
+                    yessir = 1
+                    continue
+                else:
+                    delay_print("Wow, what a wuss. " + (name + ' is a wuss!').upper())
+                    print("\n")
+                    break
     else:
-        break
-
+        if computer_score > player_score:
+            delay_print("It looks like I got the best of you today, " + name + ".")
+            break
+        elif computer_score < player_score:
+            delay_print("Congrats! I am a tough one to beat, " + name + "." )
+            break
+        else:
+            delay_print("Looks like it was a sign... good game, " + name + ".")
+            break
   
