@@ -15,5 +15,5 @@ for i in range(1000):
         s = s + 1
     print(chosen)
 print("\n# of rocks: " + str(r))
-print("# of paper " + str(p))
-print("# of scissors " + str(s))
+print("# of paper: " + str(p))
+print("# of scissors: " + str(s))
