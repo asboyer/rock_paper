@@ -209,6 +209,6 @@ while True:
             delay_print("Congrats! I am a tough one to beat, " + name + "." )
             break
         else:
-            delay_print("Looks like it was a sign... good game, " + name + ".")
-            break
+            delay_print("Like I said before, next point wins...")
+            continue
   
