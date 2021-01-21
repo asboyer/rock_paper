@@ -2,6 +2,7 @@ from random import randint
 import time 
 import sys
 import os
+from speech import speech
 
 def delay_print(s):
     for c in s:
@@ -9,8 +10,7 @@ def delay_print(s):
         sys.stdout.flush()
         time.sleep(0.04)
 
-delay_print("What is your name: ")
-name = input()
+name = speech("What is your name")
 
 name = name.replace(' ','')
 
