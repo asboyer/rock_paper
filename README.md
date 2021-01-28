@@ -7,4 +7,7 @@
 "Uh its perfectly fine in its own way"
 - Evan (@TBTGdoesthegithub)
 
+"its cool"
+- some guy, probably (@idk)
+
 	- Coderschool Student Reviews!
