@@ -1,5 +1,5 @@
 "Its a good project for beginner python learners" 
-- Rayan (@ RynSlhddn)
+- Rayan (@RynSlhddn)
 
 "Uh its good"
 - Logan (@logan755)
