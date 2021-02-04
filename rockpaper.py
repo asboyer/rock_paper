@@ -6,7 +6,7 @@ from speech import speech
 
 def delay_print(s):
     for c in s:
-        sys.stdout.write(c)
+    	sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.04)
 
@@ -46,7 +46,7 @@ Enter 'rules' if you would like to know the rules.
 '''
 
 delay_print("Hello, " + name + "!\nWould you like to play a game of rock, paper, scissor? ")
-choice = input() 
+choice = speech() 
 while True:
     while True:
         if choice.lower() == 'yes' or choice.lower() == 'y':

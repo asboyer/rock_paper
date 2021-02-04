@@ -8,4 +8,3 @@ def speech(prompt = ""):
 
 		text = r.recognize_google(audio)
 		return text
-
