@@ -2,7 +2,7 @@ from random import randint
 r = 0
 p = 0
 s = 0
-for i in range(1000):
+for i in range(100000):
     chosen = randint(1,3)
     if chosen == 1:
         chosen = "rock"

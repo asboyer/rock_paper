@@ -168,7 +168,7 @@ while True:
                 print("Please enter 'yes' or 'no'.") 
                 continue
       
-        if play.lower() == 'yes' or player.lower() == 'y':
+        if play.lower() == 'yes' or play.lower() == 'y':
             continue
         else:
             if computer_score > player_score:
