@@ -6,7 +6,7 @@ from speech import speech
 
 def delay_print(s):
     for c in s:
-    	sys.stdout.write(c)
+        sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.04)
 
@@ -59,21 +59,21 @@ while True:
             if rule == 0:
                 delay_print(rules)
                 rule = 1
-                choice = input()
+                choice = speech()
                 continue
             else:
                 print(rules)
-                choice = input()
+                choice = speech()
                 continue
         else:
             if no < 2:
                 delay_print("Please give me a 'yes' or a 'no'. ")
-                choice = input()
+                choice = speech()
                 no = no + 1
                 continue 
             else:
                 delay_print(info)
-                choice = input()
+                choice = speech()
                 continue
     if none == 0:
         pass
@@ -89,7 +89,7 @@ while True:
         else:
             print('\n')
         delay_print("Rock, paper, or scissors? ")
-        player = input()
+        player = speech()
 
         if player.lower() == 'rock' or player.lower() == 'paper' or player.lower() == 'scissors' or player.lower() == 'r' or player.lower() == 'p' or player.lower() == 's' or player.lower() == 'scissor': 
             break
@@ -149,7 +149,7 @@ while True:
     
         while True:
             delay_print("Would you like to play again? ")
-            play = input()
+            play = speech()
         
             if play.lower() == 'yes' or play.lower() == 'no' or play.lower() == 'n' or play.lower() == 'y':
                 break
@@ -186,7 +186,7 @@ while True:
                     print("\n")
                 delay_print("Just one more game? ")
                 while True:
-                    please = input()
+                    please = speech()
                     if please.lower() == 'yes' or please.lower() == 'y' or please.lower() == 'no' or please.lower() == "n":
                         break
                     

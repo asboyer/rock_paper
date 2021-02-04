@@ -5,6 +5,9 @@ def speech(prompt = ""):
 	with sr.Microphone() as source: # source -> microphone
 		print(f"{prompt}: ")
 		audio = r.listen(source)
-
-		text = r.recognize_google(audio)
-		return text
+		try:
+			text = r.recognize_google(audio)
+			return text
+		except:
+			print("Sorry, I couldn't recognize your voice.")
+			return "askdjf kajsfd; j;klj"
